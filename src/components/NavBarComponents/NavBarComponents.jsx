@@ -1,10 +1,13 @@
+//componentes
+import CartWidget from "../cartWidget/cartWidget";
+//Boostrap
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
-const NavBarComponents = () => {
+function NavBarComponents() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -20,15 +23,15 @@ const NavBarComponents = () => {
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Producto 2</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.4">
-              Producto 3
+                Producto 3
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <img src="../icon/trolley.png" alt="" style={{width : "25px" , height : "25px"}}/>0
+          <CartWidget />
       </Container>
     </Navbar>
   );
-};
+}
 
 export default NavBarComponents;
