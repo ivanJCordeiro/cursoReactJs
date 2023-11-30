@@ -2,7 +2,7 @@ import React from 'react'
 
 const CartWidget = () => {
   return (
-    <a href='#'><img src="../icon/trolley.png" alt="" style={{width : "25px" , height : "25px"}}/>0 </a>
+    <a href='#'><img src="../icon/logoTienda.svg" alt="" style={{width : "40px" , height : "40px" , borderRadius : "80px"}}/>0 </a>
   );
 };
 

@@ -9,23 +9,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavBarComponents() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" style={{backgroundColor : ""}}>
       <Container>
-        <Navbar.Brand href="#home">[Nombre de tienda]</Navbar.Brand>
+        <img src="../icon/logo.svg" style={{width : "8rem" , height : "8rem", borderRadius : "80px"}} alt="" />
+        <Navbar.Brand href="#home" style={{marginLeft : "25rem"}}>Inicio</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
             <NavDropdown title="Productos" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Producto 1</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Iphone</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Producto 1
+                Samsung
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Producto 2</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Motorola</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.4">
-                Producto 3
+                Xiaomi
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="#home">Nosotros</Nav.Link>  
           </Nav>
         </Navbar.Collapse>
           <CartWidget />
