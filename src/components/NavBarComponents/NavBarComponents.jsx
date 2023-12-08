@@ -9,21 +9,21 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavBarComponents() {
   return (
-    <Navbar expand="lg" style={{backgroundColor : ""}}>
-      <Container>
-        <img src="../icon/logo.svg" style={{width : "8rem" , height : "8rem", borderRadius : "80px"}} alt="" />
-        <Navbar.Brand href="#home" style={{marginLeft : "25rem"}}>Inicio</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+    <Navbar expand="lg" className="bg-secondary">
+      <Container className="flex">
+        <img src="../icon/logo-webp.webp" style={{width : "8rem" , height : "8rem", borderRadius : "80px"}} alt="" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="mx-5 text-bg-dark" />
+        <Navbar.Collapse id="basic-navbar-nav" className="flex mx-5 ">
+          <Navbar.Brand href="#home">Inicio</Navbar.Brand> 
           <Nav className="me-auto">
             <NavDropdown title="Productos" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Iphone</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Samsung
+              <NavDropdown.Item className="bg-dark" href="#action/3.1">Celulares</NavDropdown.Item>
+              <NavDropdown.Item className="bg-dark" href="#action/3.2">
+                Notebooks
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Motorola</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
-                Xiaomi
+              <NavDropdown.Item className="bg-dark" href="#action/3.3">Perfumes</NavDropdown.Item>
+              <NavDropdown.Item className="bg-dark" href="#action/3.4">
+                Otros
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#home">Nosotros</Nav.Link>  
