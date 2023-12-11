@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import NavBarComponents from "./components/NavBarComponents/NavBarComponents";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import FooterComponent from "./components/FooterComponent/FooterComponent";
 //Estilos
 import "./App.css";
 //Estilos boostrap
@@ -20,9 +21,10 @@ function App() {
   } , [])
 
   return (
-    <div>
+    <div className="bgBody">
       <NavBarComponents />
       <ItemListContainer productsData = {productsData}/>
+      <FooterComponent />
     </div>
   );
 }

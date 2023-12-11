@@ -1,0 +1,13 @@
+.bgNav{
+    background-color: rgb(33, 164, 197);
+    border-radius: 20px;
+    margin-inline: 20px;
+}
+
+.bgDrop{
+    background-color: black;
+}
+
+.colorText{
+    color: black;
+}

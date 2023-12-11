@@ -5,15 +5,16 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import "./NavBarComponents.css"
 
 
 function NavBarComponents() {
   return (
-    <Navbar expand="lg" className="bg-secondary">
-      <Container className="flex">
+    <Navbar expand="lg" className="bgNav">
+      <Container className="flex jujstify-content-center">
         <img src="../icon/logo-webp.webp" style={{width : "8rem" , height : "8rem", borderRadius : "80px"}} alt="" />
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="mx-5 text-bg-dark" />
-        <Navbar.Collapse id="basic-navbar-nav" className="flex mx-5 ">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="mx-5 my-3 text-bgDrop" />
+        <Navbar.Collapse id="basic-navbar-nav" className="flex mx-5">
           <Navbar.Brand href="#home">Inicio</Navbar.Brand> 
           <Nav className="me-auto">
             <NavDropdown title="Productos" id="basic-nav-dropdown">

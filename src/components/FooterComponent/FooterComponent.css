@@ -1,0 +1,17 @@
+.bgFooter{
+    background-color: rgb(33, 164, 197);
+    border-radius: 20px;
+    margin-inline: 20px;
+    height: 10vh;
+}
+
+.iconFooter{
+    height: 25px;
+    width: 25px;
+}
+
+.textCss{
+    color: black;
+    font-size: medium;
+    font-weight: bold;
+}

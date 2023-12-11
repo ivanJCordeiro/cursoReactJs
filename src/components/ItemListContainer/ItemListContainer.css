@@ -1,0 +1,16 @@
+.bgBodyCard{
+    background-color: rgba(255, 255, 255, 0.932);
+    border-radius: 20px;
+}
+
+.bgCard{
+    background-color: rgb(0, 0, 0);
+}
+
+.cardBorder{
+    border: 2px solid rgb(33, 164, 197) ;
+}
+
+.priceColor{
+    color: rgb(203, 111, 231);
+}
