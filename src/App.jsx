@@ -1,24 +1,20 @@
 //Componentes
-import { useEffect, useState } from "react";
 import NavBarComponents from "./components/NavBarComponents/NavBarComponents";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
-//Estilos
-import "./App.css";
 //Estilos boostrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getProducts } from "./services";
+//Estilos
+import "./App.css";
+//Hooks
+import { useGetProducts,} from "./components/hooks/useProducts";
+
 
 
 function App() {
-  const [productsData , setProductsData] = useState([]);
-  useEffect(() => {
-    getProducts().then((response) => {
-      setProductsData(response.data.products)
-    }) .catch ((error) => {
-      console.log(error);
-    })
-  } , [])
+ 
+const { productsData } = useGetProducts (30);
+
 
   return (
     <div className="bgBody">
