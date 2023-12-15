@@ -7,7 +7,7 @@ const ItemListContainer = ({productsData}) => {
   
   return (
     <div>
-      <div className='row justify-content-center mx-4 bgBodyCard m-3'>
+      <div style={{minHeight:"70vh"}} className='row justify-content-center mx-4 bgBodyCard m-3 align-items-center'>
         {productsData.map ((products) => {
           return (
             <Card key = {products.id} className='mx-3 my-3 border-info bgCard' style={{ width: '18rem', borderRadius:"20px" }}>
@@ -16,9 +16,6 @@ const ItemListContainer = ({productsData}) => {
             </Link>
             <Card.Body className='text-danger'>
               <Card.Title>{products.title}</Card.Title>
-              <Card.Text>
-                {products.description}
-              </Card.Text>
               <div>
                 ${products.price}USD 
               </div>

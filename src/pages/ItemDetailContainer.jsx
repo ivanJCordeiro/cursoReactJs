@@ -18,7 +18,7 @@ export const ItemDetailContainer = () => {
     <div className=" bg-light mx-4 my-3 rounded-3" style={{minHeight:"70vh",maxHeight:"auto"}}>
       <div key={productData.id} style={{display:"flex",justifyContent:"center"}}>
         <div>
-          <img src={productData.thumbnail} style={{padding:"20px", flex:"1", borderRadius:"50px"}} />
+          <img src={productData.thumbnail} style={{padding:"20px", flex:"1", borderRadius:"50px", maxHeight:"40rem"}} />
         </div>  
         <div style={{paddingTop:"20px" ,paddingRight:"10px"}}>
           <h1 style={{color:"black", fontWeight:"bolder", justifyContent:"center",fontSize:"3rem", flex:"1"}}>
