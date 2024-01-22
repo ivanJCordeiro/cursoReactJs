@@ -1,5 +1,5 @@
 //componentes
-import CartWidget from "../cartWidget/cartWidget";
+import CartWidget from ".../cartWidget/cartWidget";
 //Boostrap
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -8,6 +8,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./NavBarComponents.css"
 import { Link } from "react-router-dom";
 import { useCategory } from "../../hooks/useCategory";
+
+
 
 function NavBarComponents() {
 
@@ -22,15 +24,18 @@ function NavBarComponents() {
         <Navbar.Collapse id="basic-navbar-nav"className="flex mx-5">
           <Nav className="me-auto">
             <NavDropdown title="Products" id="basic-nav-dropdown">
-              {
-                category.map ((item, index) => {
-                  return <NavDropdown.Item key = {index}>
-                    <Link to = {`/category/${item}`} style={{textDecoration:"none", color:"white"}}>{item}</Link>
+            {
+              category.map((categoryItem) => (
+                categoryItem.categories.map((categoryName, index) => (
+                  <NavDropdown.Item key={index}>
+                    <Link to={`/category/${categoryItem.id}`} style={{ textDecoration: "none", color: "white" }}>
+                      {categoryName}
+                    </Link>
                   </NavDropdown.Item>
-                })
-              }
-            </NavDropdown>
-            <Nav.Link href="#home">Us</Nav.Link>  
+                ))
+              ))
+            }
+            </NavDropdown> 
           </Nav>
         </Navbar.Collapse>
           <CartWidget />

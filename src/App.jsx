@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 //Router
 import { MainRouter } from "./router/MainRouter";
+//Provider
+import { CartProvider } from "./context/CartContext";
 
 
 
@@ -14,8 +16,10 @@ function App() {
  
   return (
     <div className="bgBody">
-      <MainRouter />
-      <FooterComponent />
+      <CartProvider>
+        <MainRouter />
+        <FooterComponent />
+      </CartProvider>
     </div>
   );
 }

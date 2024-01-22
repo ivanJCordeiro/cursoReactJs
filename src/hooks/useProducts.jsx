@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { getProducts, getProductById, getProductByCategory } from "../services/productsService";
+import { getProductByCategory } from "../services/productsService";
+import { collection , getDocs , doc , getDoc, getFirestore } from "firebase/firestore";
 
 
 /**
@@ -8,52 +9,55 @@ import { getProducts, getProductById, getProductByCategory } from "../services/p
  * @returns {Array}
  */
 
-export const useGetProducts = (limit = 10) => {
+export const useGetProducts = (collectionName = "products") => {
     const [productsData , setProductsData] = useState([]);
 
     useEffect(() => {
-        getProducts(limit)
-        .then((response) => {
-          setProductsData(response.data.products)
-        }) 
-        .catch ((error) => {
-          console.log(error);
-        })
+      setTimeout(() => {
+      const db = getFirestore();
+
+      const productsCollection = collection (db, collectionName);
+
+      getDocs(productsCollection).then ((snapshot) =>{
+        setProductsData(snapshot.docs.map(((doc) =>({id: doc.id, ...doc.data()}))))
+      })
+        }, 2000);
       } , []);
 
       return { productsData }
 };
 
-export const useGetProductById = (id) => {
+export const useGetProductById = (collectionName="products", id) => {
 
   const [productData , setProductData] = useState({});
 
   useEffect(() => {
-    getProductById (id)
-    .then((response) => {
-      setProductData(response.data)
-    }) 
-    .catch ((error) => {
-      console.log(error);
+    const db = getFirestore();
+
+    const docRef = doc(db, collectionName, id)
+
+    getDoc(docRef).then((doc) => {
+      setProductData({id: doc.id, ...doc.data()})
     })
-  } , []);
+  } , [id]);
 
   return { productData }
 };
 
-export const useGetProductByCategory = (category) => {
+
+export const useGetProductByCategory = (collectionName = " categories ") => {
 
   const [productsData , setProductsData] = useState([]);
 
   useEffect(() => {
-    getProductByCategory (category)
-    .then((response) => {
-      setProductsData(response.data.products)
-    }) 
-    .catch ((error) => {
-      console.log(error);
+    const db = getFirestore();
+
+    const productsCategory = collection (db, collectionName);
+
+    getDocs(productsCategory).then ((snapshot) =>{
+      setProductsData(snapshot.docs.map(((doc) =>({id: doc.id, ...doc.data()}))))
     })
-  } , [category]);
+  } , [collectionName]);
 
   return { productsData }
 };

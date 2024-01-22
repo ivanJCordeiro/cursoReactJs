@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from '../../context/CartContext';
 
 const CartWidget = () => {
+  const { count } = useContext (CartContext);
+  
   return (
-    <a href='#' className='flex text-white text-decoration-none'><img src="../icon/carritoimg.png" alt="" style={{width : "40px" , height : "40px" , borderRadius : "80px"}}/>0 </a>
+    <a href='#' className='flex text-white text-decoration-none'><img src="../icon/carritoimg.png" alt="" style={{width : "40px" , height : "40px" , borderRadius : "80px"}}/>{count} </a>
   );
 };
 

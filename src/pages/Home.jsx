@@ -9,7 +9,7 @@ export const Home = () => {
         document.title = "Home"
     })
 
-    const { productsData } = useGetProducts (100);
+    const { productsData } = useGetProducts ("products");
 
   return (
     <ItemListContainer productsData = {productsData}/>
