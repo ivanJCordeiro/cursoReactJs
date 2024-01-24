@@ -11,7 +11,7 @@ export const MainRouter = () => {
         <Routes>
             <Route path="/" element = {<Home />} />
             <Route path="/item/:id" element = {<ItemDetailContainer />} />
-            <Route path="/category/:id" element = {<Category />} />
+            <Route path="/category/:category" element = {<Category />} />
         </Routes>
     </BrowserRouter>
   )

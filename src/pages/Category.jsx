@@ -1,19 +1,19 @@
 import { useParams } from "react-router-dom";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
-import { useGetProductByCategory } from "../hooks/useProducts";
 import { useEffect } from "react";
+import { getCategoriesProduct } from "../hooks/useCategory";
 
 
 export const Category = () => {
     useEffect(() => {
-        document.title = `${id}`
+        document.title = `${category}`
     });
 
-    const {id} = useParams();
+    const {category} = useParams();
 
-    const {productsData} = useGetProductByCategory(id);
+    const {categoryProducts} = getCategoriesProduct(category);
 
   return (
-    <ItemListContainer productsData = {productsData}/>
+    <ItemListContainer productsData = {categoryProducts}/>
   )
 }

@@ -1,5 +1,5 @@
 //componentes
-import CartWidget from ".../cartWidget/cartWidget";
+import CartWidget from "../cartWidget/cartWidget";
 //Boostrap
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -14,6 +14,7 @@ import { useCategory } from "../../hooks/useCategory";
 function NavBarComponents() {
 
   const {category} = useCategory();
+  console.log(category[0]?.categories, 'categoryNavBar')
 
   return (
     <Navbar expand="lg" className="bgNav">
@@ -24,17 +25,14 @@ function NavBarComponents() {
         <Navbar.Collapse id="basic-navbar-nav"className="flex mx-5">
           <Nav className="me-auto">
             <NavDropdown title="Products" id="basic-nav-dropdown">
-            {
-              category.map((categoryItem) => (
-                categoryItem.categories.map((categoryName, index) => (
-                  <NavDropdown.Item key={index}>
-                    <Link to={`/category/${categoryItem.id}`} style={{ textDecoration: "none", color: "white" }}>
-                      {categoryName}
-                    </Link>
-                  </NavDropdown.Item>
-                ))
-              ))
-            }
+      
+               {category[0]?.categories?.map((category, index) => (
+                 <NavDropdown.Item key={index}>
+                   <Link to={`/category/${category}`} style={{ textDecoration: "none", color: "white" }}>
+                     {category}
+                   </Link>
+                 </NavDropdown.Item>
+               ))}
             </NavDropdown> 
           </Nav>
         </Navbar.Collapse>
