@@ -26,7 +26,7 @@ export const getCategoriesProduct = (category) => {
         const q = query(collection(db, "products"), where("category", "==", `${category}`));
 
         getDocs(q).then((snapshot) => {
-            setCategoryProducts(snapshot.docs.map(doc=>({...doc.data()})))
+            setCategoryProducts(snapshot.docs.map(doc=>({id:doc.id,...doc.data()})))
         })
       }, [category]);
 
